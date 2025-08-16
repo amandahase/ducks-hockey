@@ -1,3 +1,3 @@
-export default function Games() {
-  return <div>Games</div>
+export default function Players() {
+  return <div>Players</div>
 }
