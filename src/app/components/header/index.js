@@ -2,6 +2,10 @@
 import styles from './header.module.css'
 import Link from "next/link";
 import React, { useState } from 'react'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -13,8 +17,14 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
-        <button onClick={toggleMenu}>Hamburger</button>
-        <div>User Icon</div>
+        <IconButton color="primary" onClick={toggleMenu}>
+          {isNavOpen ?
+            <CloseIcon />
+          :
+            <MenuIcon />  
+          }
+        </IconButton>
+        <AccountCircleIcon />
       </header>
       {isNavOpen &&
         <nav className={styles.nav}>
