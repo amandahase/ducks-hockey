@@ -11,7 +11,7 @@ import {
   TableContainer,
   Paper
 } from '@mui/material';
-// import styles from './players.module.css'
+import styles from './games.module.css'
 import moment from 'moment-timezone';
 
 export default function Games() {
@@ -22,7 +22,7 @@ export default function Games() {
   useEffect(() => {
     setGames(data.games.games)
   }, [])
-console.log(data)
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -82,7 +82,7 @@ console.log(data)
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1>Games</h1>
       <TableContainer component={Paper}>
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label="Games Table">
