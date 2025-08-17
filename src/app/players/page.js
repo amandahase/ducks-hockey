@@ -11,6 +11,7 @@ import {
   TableContainer,
   Paper
 } from '@mui/material';
+import styles from './players.module.css'
 
 export default function Players() {
   const [players, setPlayers] = useState([])
@@ -42,15 +43,21 @@ export default function Players() {
     { id: 9, title: "Nationality" },
   ]
 
+  const displayTeamName = (player, team) => {
+    const teamsList = data.core.teams;
+
+    return teamsList.find((t) => t.teamId === player[team])?.displayName;
+  }
+
   return (
-    <>
-      <div>Players</div>
+    <main className={styles.main}>
+      <h1>Players</h1>
       <TableContainer component={Paper}>
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label="Players Table">
           <TableHead>
             <TableRow>
               {columnTitles.map((column) => (
-                <TableCell align="right" key={column.id}>{column.title}</TableCell>
+                <TableCell align="left" key={column.id}>{column.title}</TableCell>
               ))}
             </TableRow>
           </TableHead>
@@ -65,15 +72,15 @@ export default function Players() {
                   TODO: THIS DOESN'T WORK BECAUSE I CAN'T GET A UNIQUE KEY VALUE FOR EACH PLAYER...
                   <TableCell align="right" key={`${player.playerId}-${value}-1`}>{value}</TableCell>
                 ))} */}
-                <TableCell align="right">{player.playerId}</TableCell>
-                <TableCell align="right">{player.firstName}</TableCell>
-                <TableCell align="right">{player.lastName}</TableCell>
-                <TableCell align="right">{player.dateOfBirth}</TableCell>
-                <TableCell align="right">{player.primaryPosition}</TableCell>
-                <TableCell align="right">{player.handedness}</TableCell>
-                <TableCell align="right">{player.reserveListTeamId}</TableCell>
-                <TableCell align="right">{player.currentTeamId}</TableCell>
-                <TableCell align="right">{player.nationality}</TableCell>
+                <TableCell align="left">{player.playerId}</TableCell>
+                <TableCell align="left">{player.firstName}</TableCell>
+                <TableCell align="left">{player.lastName}</TableCell>
+                <TableCell align="left">{player.dateOfBirth}</TableCell>
+                <TableCell align="left">{player.primaryPosition}</TableCell>
+                <TableCell align="left">{player.handedness}</TableCell>
+                <TableCell align="left">{displayTeamName(player, "reserveListTeamId")}</TableCell>
+                <TableCell align="left">{displayTeamName(player, "currentTeamId")}</TableCell>
+                <TableCell align="left">{player.nationality}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -86,7 +93,7 @@ export default function Players() {
           rowsPerPage={rowsPerPage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-        </TableContainer>
-    </>
+      </TableContainer>
+    </main>
   )
 }
