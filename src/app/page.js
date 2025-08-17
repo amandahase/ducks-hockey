@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Link href="/games">Ice is Ready</Link>
+        <Link href="/games" className={styles.button}>Ice is Ready</Link>
       </main>
     </div>
   );
