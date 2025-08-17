@@ -74,7 +74,7 @@ export default function Games() {
     },
     {
       id: 'score',
-      label: 'Score',
+      label: 'Score (H - A)',
       format: (value) => displayGameScore(value),
     },
   ];  
