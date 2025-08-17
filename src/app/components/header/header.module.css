@@ -1,14 +1,50 @@
+.container {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
+  background-color: #B5985A;
 }
 
 .nav {
   height: 100vh;
   width: 50vw;
-  z-index: 1;
+  z-index: 20;
   display: flex;
   justify-content: center;
   padding-top: 100px;
+  position: absolute;
+  top: 51px;
+  left: 0;
+  background-color: #B5985A;
+}
+
+.header svg {
+  fill: #000000;
+}
+
+.nav ul {
+  list-style-type: none;
+}
+
+.nav li {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.nav a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+  text-decoration: underline;
 }

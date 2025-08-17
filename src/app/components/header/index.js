@@ -15,16 +15,16 @@ export default function Header() {
   }
 
   return (
-    <>
+    <div className={styles.container}>
       <header className={styles.header}>
         <IconButton color="primary" onClick={toggleMenu}>
           {isNavOpen ?
-            <CloseIcon />
+            <CloseIcon fontSize="large" />
           :
-            <MenuIcon />  
+            <MenuIcon fontSize="large" />  
           }
         </IconButton>
-        <AccountCircleIcon />
+        <AccountCircleIcon fontSize="large" />
       </header>
       {isNavOpen &&
         <nav className={styles.nav}>
@@ -38,6 +38,6 @@ export default function Header() {
           </ul>
         </nav>
       }
-    </>
+    </div>
   );
 }
