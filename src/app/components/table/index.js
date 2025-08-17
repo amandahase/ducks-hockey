@@ -14,7 +14,7 @@ import {
 export default function ReusableTable(props) {
   const [tableList, setTableList] = useState([])
   const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(10)
 
   useEffect(() => {
     setTableList(props.data)
@@ -31,7 +31,7 @@ export default function ReusableTable(props) {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 850 }} aria-label={props.tableLabel}>
+      <Table sx={{ minWidth: 1080 }} aria-label={props.tableLabel}>
         <TableHead>
           <TableRow>
             {props.columns.map((column) => (
