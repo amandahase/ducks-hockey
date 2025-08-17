@@ -31,11 +31,11 @@ export default function ReusableTable(props) {
 
   return (
     <TableContainer component={Paper}>
-      <Table stickyHeader sx={{ minWidth: 650 }} aria-label={props.tableLabel}>
+      <Table sx={{ minWidth: 850 }} aria-label={props.tableLabel}>
         <TableHead>
           <TableRow>
             {props.columns.map((column) => (
-              <TableCell align="left" key={column.id}>{column.label}</TableCell>
+              <TableCell align="left" key={column.id} sx={{ fontWeight: 600 }}>{column.label}</TableCell>
             ))}
           </TableRow>
         </TableHead>
