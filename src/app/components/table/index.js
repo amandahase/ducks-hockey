@@ -1,5 +1,5 @@
-'use client';
-import React, { useEffect, useState } from 'react'
+"use client";
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableHead,
@@ -9,16 +9,16 @@ import {
   TablePagination,
   TableContainer,
   Paper
-} from '@mui/material';
+} from "@mui/material";
 
 export default function ReusableTable(props) {
-  const [tableList, setTableList] = useState([])
-  const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(10)
+  const [tableList, setTableList] = useState([]);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    setTableList(props.data)
-  }, [])
+    setTableList(props.data);
+  }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -35,7 +35,13 @@ export default function ReusableTable(props) {
         <TableHead>
           <TableRow>
             {props.columns.map((column) => (
-              <TableCell align="left" key={column.id} sx={{ fontWeight: 600 }}>{column.label}</TableCell>
+              <TableCell
+                align="left"
+                key={column.id}
+                sx={{ fontWeight: 600 }}
+              >
+                {column.label}
+              </TableCell>
             ))}
           </TableRow>
         </TableHead>
@@ -44,12 +50,14 @@ export default function ReusableTable(props) {
           .map((item, index) => (
             <TableRow
               key={index}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               {props.columns.map((column) => {
                 const value = item[column.id];
                 return (
-                  <TableCell align="left" key={column.id}>{column.format ? column.format(item) : value}</TableCell>
+                  <TableCell align="left" key={column.id}>
+                    {column.format ? column.format(item) : value}
+                  </TableCell>
                 )
               })}
             </TableRow>
@@ -65,5 +73,5 @@ export default function ReusableTable(props) {
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </TableContainer>
-  )
-}
+  );
+};

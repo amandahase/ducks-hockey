@@ -1,48 +1,54 @@
-'use client';
-import data from '../../app/hockey_data.json'
-import React from 'react'
-import styles from './players.module.css'
-import ReusableTable from '../components/table'
+"use client";
+import data from "../../app/hockey_data.json";
+import React from "react";
+import styles from "./players.module.css";
+import ReusableTable from "../components/table";
 
 export default function Players() {
   const displayTeamName = (player, team) => {
     const teamsList = data.core.teams;
 
     return teamsList.find((t) => t.teamId === player[team])?.displayName;
-  }
+  };
 
   const columns = [
-    { id: 'playerId', label: 'Id', },
-    { id: 'firstName', label: 'First Name'},
     {
-      id: 'lastName',
-      label: 'Last Name',
+      id: "playerId",
+      label: "Id",
     },
     {
-      id: 'dateOfBirth',
-      label: 'Date of Birth',
+      id: "firstName",
+      label: "First Name",
     },
     {
-      id: 'primaryPosition',
-      label: 'Primary Position',
+      id: "lastName",
+      label: "Last Name",
     },
     {
-      id: 'handedness',
-      label: 'Handedness',
+      id: "dateOfBirth",
+      label: "Date of Birth",
     },
     {
-      id: 'reserveListTeamId',
-      label: 'Reserve List Team',
+      id: "primaryPosition",
+      label: "Primary Position",
+    },
+    {
+      id: "handedness",
+      label: "Handedness",
+    },
+    {
+      id: "reserveListTeamId",
+      label: "Reserve List Team",
       format: (value) => displayTeamName(value, "reserveListTeamId"),
     },
     {
-      id: 'currentTeamId',
-      label: 'Current Team',
+      id: "currentTeamId",
+      label: "Current Team",
       format: (value) => displayTeamName(value, "currentTeamId"),
     },
     {
-      id: 'nationality',
-      label: 'Nationality',
+      id: "nationality",
+      label: "Nationality",
     },
   ];  
 
@@ -55,5 +61,5 @@ export default function Players() {
         tableLabel={"Players Table"}
       />
     </main>
-  )
-}
+  );
+};

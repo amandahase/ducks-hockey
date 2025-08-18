@@ -1,18 +1,18 @@
-'use client';
-import styles from './header.module.css'
+"use client";
+import styles from "./header.module.css";
 import Link from "next/link";
-import React, { useState } from 'react'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
+import React, { useState } from "react";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
 
 export default function Header() {
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsNavOpen(!isNavOpen)
-  }
+    setIsNavOpen(!isNavOpen);
+  };
 
   return (
     <div className={styles.container}>
@@ -40,4 +40,4 @@ export default function Header() {
       }
     </div>
   );
-}
+};

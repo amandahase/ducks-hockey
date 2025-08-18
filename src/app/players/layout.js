@@ -1,4 +1,4 @@
-import Header from '../components/header'
+import Header from "../components/header";
 
 export default function PlayersLayout({ children }) {
   return (
@@ -7,4 +7,4 @@ export default function PlayersLayout({ children }) {
       {children}
     </div>
   );
-}
+};

@@ -1,12 +1,12 @@
-'use client';
-import { createTheme } from '@mui/material/styles';
+"use client";
+import { createTheme } from "@mui/material/styles";
 
 // Color HEX Codes
 const BLACK = "#000000";
 const ORANGE = "#f95602";
 const GOLD = "#b5985a";
 const GREY = "#a4a9ad";
-const WHITE = "#ffffff"
+const WHITE = "#ffffff";
 
 const theme = createTheme({
   breakpoints: {
@@ -52,7 +52,7 @@ const theme = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: ORANGE
+          fill: ORANGE,
         }
       }
     }
