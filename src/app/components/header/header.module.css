@@ -1,3 +1,5 @@
+@import "../../variables.css";
+
 .container {
   position: sticky;
   top: 0;
@@ -9,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background-color: #B5985A;
+  background-color: var(--gold);
 }
 
 .nav {
@@ -22,11 +24,11 @@
   position: absolute;
   top: 51px;
   left: 0;
-  background-color: #B5985A;
+  background-color: var(--gold);
 }
 
 .header svg {
-  fill: #000000;
+  fill: var(--black);
 }
 
 .nav ul {
@@ -39,7 +41,7 @@
 }
 
 .nav a {
-  color: #000000;
+  color: var(--black);
   text-decoration: none;
 }
 
